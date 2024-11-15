@@ -1,5 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
+import { getTransactionsByAddress } from "../../../api/getTransaction";
+import { getTokenList } from "../../../api/getTokenList";
 
 export default function Home() {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
@@ -38,6 +40,36 @@ export default function Home() {
       }
     }
   }, []);
+
+  // const [address, setAddress] = useState("");
+  const [transactions, setTransactions] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const handleFetchTransactions = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const result = await getTransactionsByAddress(address);
+      setTransactions(result);
+    } catch (err) {
+      setError(err.message || "An error occurred while fetching transactions.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const [tokens, setTokens] = useState(null);  // Tokens state (no type annotation)
+  const [address, setAddress] = useState('');   // Ethereum address state (no type annotation)
+
+  const handleFetchTokens = async () => {
+    if (address) {
+      const result = await getTokenList(address);
+      setTokens(result);
+    } else {
+      alert('Please enter a valid address.');
+    }
+  };
 
   return (
     <div
@@ -92,24 +124,98 @@ export default function Home() {
           />
         </div>
 
-        {/* First Row: Search Bar */}
-        <div className="w-full max-w-md mt-32">
+        <div className="mt-40 p-10 z-10">
+          <h1 className="text-xl font-bold mb-4 text-white">Fetch Ethereum Transactions</h1>
+          <div className="flex">
+            <input
+              type="text"
+              placeholder="Enter Ethereum address"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              className="w-min-30 w-80 mb-4 p-2 border text-black rounded z-index z-10"
+            />
+
+            <button
+              onClick={handleFetchTransactions}
+              className="bg-blue-500 text-white py-2 px-4 rounded w-min-10 w-30 ml-2 h-10 z-index z-10"
+            >
+              {loading ? "Loading..." : "Get Transactions"}
+            </button>
+          </div>
+
+          {error && <p className="text-red-500 mt-4">{error}</p>}
+
+          {transactions && (
+            <div className="mt-6 z-10">
+              <h2 className="text-lg font-semibold mb-2">Transactions:</h2>
+              {transactions.length > 0 ? (
+                <ul className="space-y-4">
+                  {transactions.map((tx, index) => (
+                    <li key={index} className="p-4 border rounded bg-gray-50">
+                      <div className="gap-4 text-black">
+                        <p>
+                          <strong>Hash:</strong> {tx.hash}
+                        </p>
+                        <p>
+                          <strong>From:</strong> {tx.from}
+                        </p>
+                        <p>
+                          <strong>To:</strong> {tx.to}
+                        </p>
+                        <p>
+                          <strong>Value:</strong> {tx.value} Wei
+                        </p>
+                        <p>
+                          <strong>Block Number:</strong> {tx.blockNumber}
+                        </p>
+                        <p>
+                          <strong>Timestamp:</strong>{" "}
+                          {new Date(tx.timeStamp * 1000).toLocaleString()}
+                        </p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p>No transactions found for the given address and block range.</p>
+              )}
+            </div>
+          )}
+        </div>
+
+        <div className="z-10">
+          <h1>Check Owned Tokens</h1>
           <input
             type="text"
-            placeholder="Enter address search credit score"
-            className="w-full px-4 py-2 text-black rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-gray-500"
+            placeholder="Enter Ethereum address"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}  // Update address state
           />
+          <button onClick={handleFetchTokens}>Get Token List</button>
+
+          {/* Display tokens or a message */}
+          {tokens ? (
+            <ul>
+              {tokens.map((token, index) => (
+                <li key={index}>
+                  <strong>{token.name}</strong> ({token.symbol}) - Balance: {token.balance}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>No tokens found or invalid address</p>
+          )}
         </div>
 
         {/* Separator Text */}
-        <div className="my-4 text-lg font-semibold">or</div>
+        {/* <div className="my-4 text-lg font-semibold">or</div> */}
 
         {/* Second Row: Button */}
-        <div>
+        {/* <div>
           <button className="px-6 py-3 bg-white text-black font-medium rounded-lg shadow hover:bg-gray-300 transition duration-300">
             Click Me
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
