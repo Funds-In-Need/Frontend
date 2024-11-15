@@ -96,7 +96,7 @@ export default function Home() {
         <div className="w-full max-w-md mt-32">
           <input
             type="text"
-            placeholder="Search..."
+            placeholder="Enter address search credit score"
             className="w-full px-4 py-2 text-black rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-gray-500"
           />
         </div>
