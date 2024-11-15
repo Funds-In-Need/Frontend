@@ -58,10 +58,10 @@ export default function Home() {
 
       {/* Title on Top Left */}
       <div
-        className="absolute top-4 left-4 text-2xl font-bold"
+        className="absolute top-4 left-4 text-2xl font-bold drop-shadow-md"
         style={{ zIndex: 2 }}
       >
-        FIN
+        Funds In Needs
       </div>
 
       {/* Main Content */}
@@ -76,18 +76,18 @@ export default function Home() {
           className="absolute"
           style={{
             transform: `translate(-50%, -120%) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
-            top: "50%",
+            top: "75%",
             left: "50%",
             transition: "transform 0.1s ease-out",
           }}
         >
           <img
-            src="/sexyduo.png"
+            src="/Name(White).png"
             alt="logo"
-            className="opacity-70"
+            className="opacity-100"
             style={{
-              height: "200px", // Matches the size of two rows
-              width: "200px", // Matches the size of two rows
+              height: "500px", // Matches the size of two rows
+              width: "500px", // Matches the size of two rows
             }}
           />
         </div>
