@@ -1,3 +1,5 @@
-import Image from "next/image";
-import React from "react";
-export default function Home() {}
+import LandingPage from "./landingPage/landing_page";
+
+export default function Page() {
+  return <LandingPage />;
+}

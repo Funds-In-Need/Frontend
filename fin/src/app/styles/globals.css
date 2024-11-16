@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Custom Fonts */
+@font-face {
+  font-family: "Blanka";
+  src: url("../fonts/Blanka-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "VCR_OSD_MONO";
+  src: url("../fonts/VCR_OSD_MONO_1.001.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Apply Fonts to Body */
+body {
+  font-family: "VCR_OSD_MONO", monospace; /* Default fallback font */
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* Black background */
+}
