@@ -1,3 +1,4 @@
+import React from "react";
 import LandingPage from "./landingPage/landing_page";
 import ParticlesComponent from "../../components/particles";
 
