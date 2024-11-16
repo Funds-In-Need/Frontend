@@ -61,12 +61,7 @@ const Search_Login: React.FC = () => {
   };
 
   return (
-    <div className="p-8">
-      {/* Header Section */}
-      <div className="flex justify-between items-center mb-12">
-        <h1 className="text-3xl font-bold text-gray-200">F.I.N.</h1>
-      </div>
-
+    <div className="p-16">
       {/* Search Bar */}
       <div className="flex items-center justify-center mb-16">
         <form

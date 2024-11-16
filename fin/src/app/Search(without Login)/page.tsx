@@ -32,18 +32,9 @@ const AssessmentCard = () => {
   };
 
   return (
-    <div className="p-8">
-      {/* Header Section */}
-      <div className="flex justify-between items-center mb-12">
-        <h1 className="font-blanka text-3xl  text-white">F I N</h1>
-        
-        <button className="px-6 py-2 bg-blue-500 text-white rounded-md">
-          CONNECT WALLET
-        </button>
-      </div>
-      
+    <div className="p-16">
       {/* Search Bar */}
-      <div className="flex items-center justify-center mb-4">
+      <div className="flex items-center justify-center mb-12">
         <form
           onSubmit={handleSearch}
           className="flex flex-col items-center space-y-6 w-full max-w-lg"
@@ -76,7 +67,7 @@ const AssessmentCard = () => {
           </div>
 
           {/* Card with Smoother Borders */}
-          <div className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm rounded-2xl border border-gray-300 border-opacity-50 shadow-md p-10 mx-auto">
+          <div className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-md rounded-2xl border border-gray-300 border-opacity-50 shadow-md p-10 mx-auto">
             <div className="mb-8">
               <p className="text-l text-gray-200">
                 Address...................................
