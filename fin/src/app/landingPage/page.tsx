@@ -11,7 +11,7 @@ const LandingPage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black">
+    <div className="flex flex-col items-center justify-center min-h-screen ">
       {/* Animated Heading */}
       <div className="relative group">
         <h1
