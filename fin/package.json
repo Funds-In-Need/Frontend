@@ -14,15 +14,9 @@
     "clsx": "^2.1.1",
     "framer-motion": "^11.11.17",
     "next": "15.0.3",
-<<<<<<< HEAD
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "thirdweb": "^5.68.0"
-=======
-    "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106",
-    "tailwind-merge": "^2.5.4"
->>>>>>> b9909635b98abdc36417b98b757c9ad2b2df842e
   },
   "devDependencies": {
     "@types/node": "^20",
