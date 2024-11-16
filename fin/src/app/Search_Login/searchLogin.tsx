@@ -116,12 +116,13 @@ const Search_Login: React.FC = () => {
           <div className="flex flex-col items-center cursor-pointer">
             {isClaimed ? (
               <>
-                {/* Green tick after claiming, centered with slower bounce animation */}
-                <div className="w-32 h-32 rounded-full border-4 border-green-500 flex items-center justify-center mt-6">
-                  <span className="text-6xl text-green-500 animate-slow-bounce flex items-center justify-center">
+                {/* Green tick after claiming, centered with slower bounce and blinking effect */}
+                <div className="w-32 h-32 rounded-full border-4 border-green-500 flex items-center justify-center mt-6 animate-slow-bounce">
+                  <span className="text-6xl text-green-500 animate-blink flex items-center justify-center">
                     ✔
                   </span>
                 </div>
+
                 {/* Back Button */}
                 <button
                   onClick={handleBack}

@@ -32,8 +32,8 @@ const config: Config = {
         },
 
         slideLeft: {
-          '0%': { transform: 'translateX(100%)' },
-          '100%': { transform: 'translateX(-100%)' },
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(-100%)" },
         },
 
         "gradient-animation": {
@@ -57,14 +57,21 @@ const config: Config = {
             animationTimingFunction: "cubic-bezier(0, 0, 0.2, 1)",
           },
         },
+
+        blink: {
+          "25%": { opacity: "0.5" },
+          "50%": { opacity: "0" },
+          "75%": { opacity: "0.5" },
+        },
       },
 
       animation: {
-        'smooth-glow': 'smooth-glow 3s ease-in-out infinite',
-        'gradient-bg': 'gradient-animation 10s ease infinite',
-        'slide-left': 'slideLeft 20s linear infinite',
+        "smooth-glow": "smooth-glow 3s ease-in-out infinite",
+        "gradient-bg": "gradient-animation 10s ease infinite",
+        "slide-left": "slideLeft 20s linear infinite",
         growShrink: "growShrink 3s ease-in-out infinite",
-        "slow-bounce": "slowBounce 3s infinite",
+        "slow-bounce": "slowBounce 7s infinite",
+        blink: "blink 4s linear infinite",
       },
       fontFamily: {
         blanka: ["Blanka", "sans-serif"],
