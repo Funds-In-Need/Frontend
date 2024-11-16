@@ -10,9 +10,9 @@ export default function Page() {
     <>
       <ParticlesComponent id="particles" />
       <AssessmentCard />
-      // return <LandingPage />;
-      // return <Test />;
-      // return <FetchCreditScore/>;
+      {/* <LandingPage />; */}
+      <Test />;
+      {/* <FetchCreditScore/>; */}
     </>
   );
 }
