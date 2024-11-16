@@ -84,7 +84,7 @@ const LandingPage: React.FC = () => {
 <div ref={customLayoutRef} className="bg-black text-white min-h-screen p-6 ">
   {/* MVP Highlights Row */}
   <div className="relative overflow-hidden">
-    <div className="flex space-x-6 animate-slide-left">
+    <div className="flex space-x-12 animate-slide-left">
       {/* Card 1 */}
       <div className=" p-4 rounded-lg shadow-md text-center text-white min-w-[200px]">
         <h3 className="text-2xl ">5+ Blockchains Supported</h3>
@@ -97,79 +97,15 @@ const LandingPage: React.FC = () => {
       <div className=" p-4 rounded-lg shadow-md text-center text-white min-w-[200px]">
         <h3 className="text-2xl ">Trusted by Professionals</h3>
       </div>
-    </div>
-  
-    {/* Teams Section */}
-    <div>
-      <h2 className="text-2xl font-bold border-b border-gray-700 pb-2 mb-6 text-center mt-16">
-        T E A M S
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-8">
-        {/* Profile 1 */}
-        <div className="flex flex-col items-center">
-          <img
-            src="/profile/1.png"
-            alt="Profile 1"
-            className="w-24 h-24 rounded-full bg-gray-800 object-cover"
-          />
-          <div className="text-center mt-2">
-            <p className="text-base font-semibold">John Doe</p>
-            <p className="text-sm text-gray-400">Frontend Developer</p>
-          </div>
-        </div>
-
-        {/* Profile 2 */}
-        <div className="flex flex-col items-center">
-          <img
-            src="/profile/2.png"
-            alt="Profile 2"
-            className="w-24 h-24 rounded-full bg-gray-800 object-cover"
-          />
-          <div className="text-center mt-2">
-            <p className="text-base font-semibold">Jane Smith</p>
-            <p className="text-sm text-gray-400">Backend Developer</p>
-          </div>
-        </div>
-
-        {/* Profile 3 */}
-        <div className="flex flex-col items-center">
-          <img
-            src="/profile/3.png"
-            alt="Profile 3"
-            className="w-24 h-24 rounded-full bg-gray-800 object-cover"
-          />
-          <div className="text-center mt-2">
-            <p className="text-base font-semibold">Emily Clark</p>
-            <p className="text-sm text-gray-400">UI/UX Designer</p>
-          </div>
-        </div>
-
-        {/* Profile 4 */}
-        <div className="flex flex-col items-center">
-          <img
-            src="/profile/4.png"
-            alt="Profile 4"
-            className="w-24 h-24 rounded-full bg-gray-800 object-cover"
-          />
-          <div className="text-center mt-2">
-            <p className="text-base font-semibold">Michael Brown</p>
-            <p className="text-sm text-gray-400">DevOps Engineer</p>
-          </div>
-        </div>
-
-        {/* Profile 5 */}
-        <div className="flex flex-col items-center">
-          <img
-            src="/profile/5.png"
-            alt="Profile 5"
-            className="w-24 h-24 rounded-full bg-gray-800 object-cover"
-          />
-          <div className="text-center mt-2">
-            <p className="text-base font-semibold">Sophia Davis</p>
-            <p className="text-sm text-gray-400">Project Manager</p>
-          </div>
-        </div>
+      <div className=" p-4 rounded-lg shadow-md text-center text-white min-w-[200px]">
+        <h3 className="text-2xl ">The First To Use Erc1155 as collateral</h3>
       </div>
+      <div className=" p-4 rounded-lg shadow-md text-center text-white min-w-[200px]">
+        <h3 className="text-2xl ">Up-to-time Credit Verification</h3>
+      </div>
+      <div className=" p-4 rounded-lg shadow-md text-center text-white min-w-[200px]">
+        <h3 className="text-2xl ">Trusted by Lending Protocols</h3>
+      </div>  
     </div>
   </div>
 
@@ -216,6 +152,78 @@ const LandingPage: React.FC = () => {
     </div>
   ))}
 </div>
+{/* Teams Section */}
+<div>
+      <h2 className="text-2xl font-bold border-b border-gray-700 pb-2 mb-6 text-center mt-16">
+        T E A M S
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-8">
+        {/* Profile 1 */}
+        <div className="flex flex-col items-center">
+          <img
+            src="/profile/2.png"
+            alt="Profile 1"
+            className="w-24 h-24 rounded-full bg-gray-800 object-cover"
+          />
+          <div className="text-center mt-2">
+            <p className="text-base font-semibold">Lee Shuen Rui</p>
+            <p className="text-sm text-gray-400">Project Manager</p>
+          </div>
+        </div>
+
+        {/* Profile 2 */}
+        <div className="flex flex-col items-center">
+          <img
+            src="/profile/4.png"
+            alt="Profile 2"
+            className="w-24 h-24 rounded-full bg-gray-800 object-cover"
+          />
+          <div className="text-center mt-2">
+            <p className="text-base font-semibold">Tan Aik Wei</p>
+            <p className="text-sm text-gray-400">Backend Developer</p>
+          </div>
+        </div>
+
+        {/* Profile 3 */}
+        <div className="flex flex-col items-center">
+          <img
+            src="/profile/3.png"
+            alt="Profile 3"
+            className="w-24 h-24 rounded-full bg-gray-800 object-cover"
+          />
+          <div className="text-center mt-2">
+            <p className="text-base font-semibold">Lai Cheong Kian</p>
+            <p className="text-sm text-gray-400">UI/UX / Frontend</p>
+          </div>
+        </div>
+
+        {/* Profile 4 */}
+        <div className="flex flex-col items-center">
+          <img
+            src="/profile/1.png"
+            alt="Profile 4"
+            className="w-24 h-24 rounded-full bg-gray-800 object-cover"
+          />
+          <div className="text-center mt-2">
+            <p className="text-base font-semibold">Lee Xin Rou</p>
+            <p className="text-sm text-gray-400">Full Stack</p>
+          </div>
+        </div>
+
+        {/* Profile 5 */}
+        <div className="flex flex-col items-center">
+          <img
+            src="/profile/5.png"
+            alt="Profile 5"
+            className="w-24 h-24 rounded-full bg-gray-800 object-cover"
+          />
+          <div className="text-center mt-2">
+            <p className="text-base font-semibold">Goh Wei Qi</p>
+            <p className="text-sm text-gray-400">Frontend</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 
