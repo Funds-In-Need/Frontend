@@ -2,10 +2,14 @@
 "use client";
 
 import React, { useState, useRef } from "react";
+import { useAddress } from "@thirdweb-dev/react";
 
 const LandingPage: React.FC = () => {
   const [query, setQuery] = useState("");
   const customLayoutRef = useRef<HTMLDivElement>(null);
+
+  // Get the user's wallet address using Thirdweb's `useAddress` hook
+  const address = useAddress();
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -17,7 +21,7 @@ const LandingPage: React.FC = () => {
   };
 
   return (
-    <div className=" text-white min-h-screen">
+    <div className="text-white min-h-screen">
       {/* Landing Page Section */}
       <div className="flex flex-col items-center justify-center min-h-screen">
         {/* Animated Heading */}
@@ -47,19 +51,25 @@ const LandingPage: React.FC = () => {
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Type your search..."
+              placeholder="Enter Address..."
               className="w-full px-6 py-4 text-lg text-gray-900 bg-white rounded-full shadow-md border-2 border-black focus:outline-none focus:ring-0 placeholder-gray-400"
             />
           </div>
           {/* Buttons */}
-          <div className="flex justify-between space-x-8">
-            <button
-              type="button"
-              onClick={() => console.log("Mint clicked")}
-              className="text-lg font-semibold uppercase tracking-wider text-white hover:text-green-300 focus:outline-none transition-all"
-            >
-              Mint
-            </button>
+          <div
+            className={`flex ${
+              address ? "justify-between" : "justify-center"
+            } space-x-8`}
+          >
+            {address && (
+              <button
+                type="button"
+                onClick={() => console.log("Mint clicked")}
+                className="text-lg font-semibold uppercase tracking-wider text-white hover:text-green-300 focus:outline-none transition-all"
+              >
+                Mint
+              </button>
+            )}
             <button
               type="submit"
               className="text-lg font-semibold uppercase tracking-wider text-white hover:text-blue-300 focus:outline-none transition-all"
@@ -111,7 +121,7 @@ const LandingPage: React.FC = () => {
 
 
 {/* Sponsors Section */}
-<div className="col-span-2 mt-16">
+<div className="col-span-2 ">
   <h2 className="text-2xl font-bold border-b border-gray-700 pb-2 mb-6 text-center">
     SPONSORS
   </h2>
