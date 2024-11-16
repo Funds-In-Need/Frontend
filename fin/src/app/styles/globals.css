@@ -17,6 +17,40 @@
   font-style: normal;
 }
 
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-bg {
+  background: linear-gradient(
+    120deg,
+    #1a1a2e,
+    #16213e,
+    #0f3460,
+    #1b262c,
+    #0f4c75
+  );
+  background-size: 400% 400%;
+  animation: gradient-animation 10s ease infinite;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(6px);
+  transform: scale(1.1);
+}
+
+
 /* Apply Fonts to Body */
 body {
   font-family: "VCR_OSD_MONO", monospace; /* Default fallback font */
