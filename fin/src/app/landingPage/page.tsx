@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+// src/app/landingPage/page.tsx
 "use client";
 
 import React, { useState, useRef } from "react";
@@ -8,8 +8,7 @@ const LandingPage: React.FC = () => {
   const [query, setQuery] = useState("");
   const customLayoutRef = useRef<HTMLDivElement>(null);
 
-  // Get the user's wallet address using Thirdweb's `useAddress` hook
-  const address = useAddress();
+  const address = useAddress(); // Fetch the connected wallet address
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,7 +21,6 @@ const LandingPage: React.FC = () => {
 
   return (
     <div className="text-white min-h-screen">
-      {/* Landing Page Section */}
       <div className="flex flex-col items-center justify-center min-h-screen">
         {/* Animated Heading */}
         <div className="relative group">
@@ -40,13 +38,21 @@ const LandingPage: React.FC = () => {
           </h1>
         </div>
 
+        {/* Wallet Connection Status */}
+        <div className="mb-8">
+          <h2 className="text-2xl">
+            {address
+              ? `Connected Wallet: ${address}`
+              : "Connect your wallet using the Navbar"}
+          </h2>
+        </div>
+
         {/* Search Bar */}
         <form
           onSubmit={handleSearch}
           className="flex flex-col items-center space-y-6 w-full max-w-lg"
         >
           <div className="relative w-full">
-            {/* Input */}
             <input
               type="text"
               value={query}
@@ -55,11 +61,8 @@ const LandingPage: React.FC = () => {
               className="w-full px-6 py-4 text-lg text-gray-900 bg-white rounded-full shadow-md border-2 border-black focus:outline-none focus:ring-0 placeholder-gray-400"
             />
           </div>
-          {/* Buttons */}
           <div
-            className={`flex ${
-              address ? "justify-between" : "justify-center"
-            } space-x-8`}
+            className={`flex ${address ? "justify-between" : "justify-center"} space-x-8`}
           >
             {address && (
               <button
@@ -89,6 +92,9 @@ const LandingPage: React.FC = () => {
           </button>
         </div>
       </div>
+ 
+
+
 
 {/* Custom Layout Section */}
 <div ref={customLayoutRef} className="bg-black text-white min-h-screen p-6 ">
