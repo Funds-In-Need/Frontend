@@ -8,6 +8,8 @@ import { fetchCreditScore } from "../utils/setScore"; // Import fetchCreditScore
 import { ThirdwebProvider, ConnectButton } from "thirdweb/react";
 import { createThirdwebClient } from "thirdweb";
 import { createWallet, inAppWallet } from "thirdweb/wallets";
+import WrappedExampleComponent from "./../components/ExampleComponent"; // Import WrappedExampleComponent
+
 
 const client = createThirdwebClient({ clientId: "YOUR_CLIENT_ID" });
 
@@ -118,6 +120,10 @@ export default function Test() {
 
             {error && <p className="text-red-500 mt-4">{error}</p>}
 
+            <div className="text-white">
+              <h1>Graph Data Example</h1>
+              <WrappedExampleComponent address={address}/>
+            </div>
             {/* Credit Score Section */}
             {creditScore !== null && (
               <div className="text-white mt-4">
@@ -176,13 +182,19 @@ export default function Test() {
 
             {/* Transactions Section */}
             {transactions && (
-              <div className="mt-6 z-10">
-                <h2 className="text-lg font-semibold mb-2">Transactions:</h2>
-                {transactions.length > 0 ? (
+            <div className="mt-6 z-10 text-white">
+              <h2 className="text-lg font-semibold mb-2"></h2>
+              {transactions.length > 0 ? (
+                <>
+                  {/* Calculate the sum of all transaction values */}
+                  <p className="text-lg font-semibold mb-2">
+                    Total Number of Transactions: {transactions.length}
+                  </p>
                   <ul className="space-y-4">
                     {transactions.map((tx, index) => (
-                      <li key={index} className="p-4 border rounded bg-gray-50">
-                        <div className="gap-4 text-black">
+                      <li key={index} className="p-4 border rounded bg-gray-800 text-white">
+                        <div className="gap-4">
+                          <p><strong>#{index + 1}</strong></p> {/* Adding transaction number */}
                           <p>
                             <strong>Hash:</strong> {tx.hash}
                           </p>
@@ -206,11 +218,12 @@ export default function Test() {
                       </li>
                     ))}
                   </ul>
-                ) : (
-                  <p>No transactions found for the given address.</p>
-                )}
-              </div>
-            )}
+                </>
+              ) : (
+                <p>No transactions found for the given address.</p>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </ThirdwebProvider>
