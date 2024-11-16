@@ -1,4 +1,4 @@
-import React from "react";import LandingPage from "./landingPage/landing_page";
+import React from "react";import LandingPage from "./landingPage/page";
 import Test from "./landingTest/test";
 import FetchCreditScore from "./landingScore/score";
 import AssessmentCard from "./Search(without Login)/page";
