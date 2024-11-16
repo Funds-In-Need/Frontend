@@ -14,38 +14,6 @@
   }
 }
 
-.animated-bg {
-  background: linear-gradient(135deg, #ff0000, #0000ff, #00ff00);
-  background-size: 300% 300%;
-  animation: gradientShift 6s ease infinite;
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@font-face {
-  font-family: "Blanka";
-  src: url("/fonts/Blanka-Regular.otf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "VCR OSD Mono";
-  src: url("/fonts/vcr_osd_mono_1.001.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 body {
   color: var(--foreground);
   background: var(--background);
