@@ -1,8 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 const Search_Login: React.FC = () => {
   const [query, setQuery] = useState("");
+  const router = useRouter();
+
   const [currentStep, setCurrentStep] = useState(0);
   const steps = [
     "Transaction History",
@@ -48,7 +51,8 @@ const Search_Login: React.FC = () => {
   };
 
   const handleBack = () => {
-    setIsClaimed(false);
+    // Navigate to the landing page
+    router.push("/landingPage");
   };
 
   return (

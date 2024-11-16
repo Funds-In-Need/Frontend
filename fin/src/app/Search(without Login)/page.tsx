@@ -3,9 +3,6 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
-
-
-
 const AssessmentCard = () => {
   const [query, setQuery] = useState("");
   const router = useRouter();
@@ -68,9 +65,10 @@ const AssessmentCard = () => {
         <div className="flex-1 ml-12">
           {/* Back Button */}
           <div className="mb-3">
-            <button 
+            <button
               onClick={handleBackClick}
-              className="text-gray-300 flex items-center hover:text-gray-300">
+              className="text-gray-300 flex items-center hover:text-gray-300"
+            >
               <span className="mr-2">←</span>
               <span>BACK</span>
             </button>

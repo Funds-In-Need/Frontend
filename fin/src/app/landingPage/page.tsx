@@ -27,7 +27,6 @@ const LandingPage: React.FC = () => {
           Fund In Need
         </h1>
       </div>
-      
       {/* Search Bar */}
       <form
         onSubmit={handleSearch}
@@ -60,7 +59,8 @@ const LandingPage: React.FC = () => {
           </button>
         </div>
       </form>
-    </div>
+          
+    </div>
   );
 };
 
