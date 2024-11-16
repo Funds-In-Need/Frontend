@@ -7,23 +7,28 @@ const Search_Login: React.FC = () => {
   const router = useRouter();
 
   const [currentStep, setCurrentStep] = useState(0);
-  const steps = [
+  const [steps, setSteps] = useState([
     "Transaction History",
     "Collateral Management",
     "Governance Participation",
     "Liquidity Provision",
     "Loan Repayment Behavior",
-  ];
+  ]);
   const [isLoading, setIsLoading] = useState(true);
   const [isClaimed, setIsClaimed] = useState(false);
   const [progress, setProgress] = useState(0);
   const [showProgress, setShowProgress] = useState(false);
+  const [fading, setFading] = useState(false);
 
   useEffect(() => {
     if (isLoading && currentStep < steps.length) {
       const timer = setTimeout(() => {
-        setCurrentStep((prevStep) => prevStep + 1);
-      }, 3000); // Delay for each step (3 seconds)
+        setFading(true); // Start fading out
+        setTimeout(() => {
+          setCurrentStep((prevStep) => prevStep + 1);
+          setFading(false); // Reset fading after the change
+        }, 500); // Wait 500ms to complete fade-out before changing the word
+      }, 2000); // Delay for each step (2 seconds)
       return () => clearTimeout(timer);
     } else if (currentStep === steps.length) {
       setIsLoading(false);
@@ -98,8 +103,12 @@ const Search_Login: React.FC = () => {
                 }}
               ></div>
             </div>
-            {/* Step Description */}
-            <div className="text-4xl text-gray-200 mt-2 transition-all duration-300 transform animate-growShrink">
+            {/* Step Description with Smooth Transition */}
+            <div
+              className={`text-4xl text-gray-200 mt-2 transition-opacity duration-500 transform ${
+                fading ? "opacity-0" : "opacity-100"
+              }`}
+            >
               {steps[currentStep]}
             </div>
           </>
