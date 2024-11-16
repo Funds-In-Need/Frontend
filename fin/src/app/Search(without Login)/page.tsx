@@ -3,9 +3,6 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
-
-
-
 const AssessmentCard = () => {
   const [query, setQuery] = useState("");
   const router = useRouter();
@@ -35,15 +32,7 @@ const AssessmentCard = () => {
   };
 
   return (
-    <div className="p-8">
-      {/* Header Section */}
-      <div className="flex justify-between items-center mb-12">
-        <h1 className="text-3xl font-bold text-gray-200">F.I.N.</h1>
-        <button className="px-6 py-2 bg-blue-500 text-white rounded-md">
-          CONNECT WALLET
-        </button>
-      </div>
-
+    <div className="p-16">
       {/* Search Bar */}
       <div className="flex items-center justify-center mb-12">
         <form
@@ -68,9 +57,10 @@ const AssessmentCard = () => {
         <div className="flex-1 ml-12">
           {/* Back Button */}
           <div className="mb-3">
-            <button 
+            <button
               onClick={handleBackClick}
-              className="text-gray-300 flex items-center hover:text-gray-300">
+              className="text-gray-300 flex items-center hover:text-gray-300"
+            >
               <span className="mr-2">←</span>
               <span>BACK</span>
             </button>
