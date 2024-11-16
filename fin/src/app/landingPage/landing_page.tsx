@@ -44,11 +44,11 @@ const LandingPage: React.FC = () => {
           />
         </div>
         {/* Buttons */}
-        <div className="flex space-x-8">
+        <div className="flex justify-between space-x-8">
           <button
             type="button"
             onClick={() => console.log("Mint clicked")}
-            className="text-lg font-semibold uppercase tracking-wider text-white hover:text-green-300 focus:outline-none transition-all"
+            className=" text-lg font-semibold uppercase tracking-wider text-white hover:text-green-300 focus:outline-none transition-all"
           >
             Mint
           </button>
@@ -60,7 +60,7 @@ const LandingPage: React.FC = () => {
           </button>
         </div>
       </form>
-    </div>
+    </div>
   );
 };
 
