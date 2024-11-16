@@ -16,6 +16,11 @@ const config: Config = {
           '100%': { 'box-shadow': '0px 0px 5px 1px rgba(135, 206, 250, 0.5)', 'border-color': 'black' },
         },
 
+        slideLeft: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+
         'gradient-animation': {
         '0%': { backgroundPosition: '0% 50%' },
         '50%': { backgroundPosition: '100% 50%' },
@@ -26,6 +31,7 @@ const config: Config = {
       animation: {
         'smooth-glow': 'smooth-glow 3s ease-in-out infinite',
         'gradient-bg': 'gradient-animation 10s ease infinite',
+        'slide-left': 'slideLeft 20s linear infinite',
       },
       fontFamily: {
         blanka: ["Blanka", "sans-serif"],
