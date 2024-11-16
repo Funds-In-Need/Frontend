@@ -1,8 +1,14 @@
 "use client";
-import React, { useState } from "react"; // Add useState import
+
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+
+
+
 
 const AssessmentCard = () => {
-  const [query, setQuery] = useState(""); // Define query state
+  const [query, setQuery] = useState("");
+  const router = useRouter();
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,6 +29,11 @@ const AssessmentCard = () => {
     return "bg-red-500";
   };
 
+  const handleBackClick = () => {
+    // Navigate to the landing page
+    router.push("/landingPage");
+  };
+
   return (
     <div className="p-8">
       {/* Header Section */}
@@ -40,7 +51,6 @@ const AssessmentCard = () => {
           className="flex flex-col items-center space-y-6 w-full max-w-lg"
         >
           <div className="relative w-full">
-            {/* Input with smooth glowing animation */}
             <input
               type="text"
               value={query}
@@ -58,7 +68,9 @@ const AssessmentCard = () => {
         <div className="flex-1 ml-12">
           {/* Back Button */}
           <div className="mb-3">
-            <button className="text-gray-300 flex items-center hover:text-gray-300">
+            <button 
+              onClick={handleBackClick}
+              className="text-gray-300 flex items-center hover:text-gray-300">
               <span className="mr-2">←</span>
               <span>BACK</span>
             </button>
