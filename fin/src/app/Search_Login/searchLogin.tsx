@@ -100,7 +100,7 @@ const Search_Login: React.FC = () => {
             </div>
             {/* Step Description with Smooth Transition */}
             <div
-              className={`text-4xl text-gray-200 mt-2 transition-opacity duration-500 transform ${
+              className={`text-4xl text-gray-200 mt-2 transition-opacity duration-500 transform animate-growShrink ${
                 fading ? "opacity-0" : "opacity-100"
               }`}
             >
