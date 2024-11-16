@@ -1,12 +1,13 @@
 import React from "react";
 import LandingPage from "./landingPage/landing_page";
+import AssessmentCard from "./Search(without Login)/Search_page";
 import ParticlesComponent from "../../components/particles";
 
 export default function Page() {
   return (
     <>
       <ParticlesComponent id="particles" />
-      <LandingPage />
+      <AssessmentCard />
     </>
   );
 }
