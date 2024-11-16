@@ -21,13 +21,13 @@ const LandingPage: React.FC = () => {
           FIN
         </h1>
         <h1
-          className="flex  text-center top-0 left-0 text-4xl tracking-normal text-white drop-shadow-lg transition-all duration-700 opacity-0 group-hover:opacity-100"
+          className="flex mb-8 text-center top-0 left-0 text-4xl tracking-normal text-white drop-shadow-lg transition-all duration-700 opacity-0 group-hover:opacity-100"
           style={{ fontFamily: "VCR_OSD_MONO, monospace" }}
         >
           Fund In Need
         </h1>
       </div>
-
+      
       {/* Search Bar */}
       <form
         onSubmit={handleSearch}

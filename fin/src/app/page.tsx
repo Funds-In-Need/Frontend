@@ -1,16 +1,18 @@
 import React from "react";
-import LandingPage from "./landingPage/page";
-import AssessmentCard from "./Search(without Login)/page";
-
-
-
-
+import LandingPage from "./landingPage/landing_page";
+import Test from "./landingTest/test";
+import FetchCreditScore from "./landingScore/score";
+import AssessmentCard from "./Search(without Login)/Search_page";
+import ParticlesComponent from "../../components/particles";
 
 export default function Page() {
   return (
     <>
       
       <AssessmentCard />
+      // return <LandingPage />;
+      // return <Test />;
+      // return <FetchCreditScore/>;
     </>
   );
 }
