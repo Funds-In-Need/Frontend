@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { getTransactionsByAddress } from "../../../api/getTransaction";
 import { getTokenList } from "../../../api/getTokenList";
+import Link from "next/link";
 
 export default function Home() {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
@@ -206,7 +207,11 @@ export default function Home() {
             <p>No tokens found or invalid address</p>
           )}
         </div>
-
+        
+        <div className="z-20">
+          <Link href="/test" className="bg-blue-500 text-white py-2 px-4 rounded z-20">Go to Test Page
+          </Link>
+        </div>
         {/* Separator Text */}
         {/* <div className="my-4 text-lg font-semibold">or</div> */}
 
