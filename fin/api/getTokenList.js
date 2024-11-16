@@ -1,3 +1,4 @@
+//getTokenList.js
 export async function getTokenList(address) {
     const apiKey = process.env.NEXT_PUBLIC_BLOCKSCOUT_API_KEY; // Optional, depending on your API setup
     const baseUrl = "https://eth-sepolia.blockscout.com/api";
