@@ -63,8 +63,6 @@ const config: Config = {
         'smooth-glow': 'smooth-glow 3s ease-in-out infinite',
         'gradient-bg': 'gradient-animation 10s ease infinite',
         'slide-left': 'slideLeft 20s linear infinite',
-        "smooth-glow": "smooth-glow 3s ease-in-out infinite",
-        "gradient-bg": "gradient-animation 10s ease infinite",
         growShrink: "growShrink 3s ease-in-out infinite",
         "slow-bounce": "slowBounce 3s infinite",
       },
