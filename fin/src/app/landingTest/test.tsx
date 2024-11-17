@@ -6,19 +6,19 @@ import { getTokenList } from "../../../api/getTokenList";
 import { fetchNFTData } from "../../../api/getNFT";
 import { fetchCreditScore } from "../utils/setScore"; // Import fetchCreditScore function
 import { ThirdwebProvider, ConnectButton } from "thirdweb/react";
-import { createThirdwebClient } from "thirdweb";
-import { createWallet, inAppWallet } from "thirdweb/wallets";
+// import { createThirdwebClient } from "thirdweb";
+// import { createWallet, inAppWallet } from "thirdweb/wallets";
 import WrappedExampleComponent from "./../components/ExampleComponent"; // Import WrappedExampleComponent
 
 
-const client = createThirdwebClient({ clientId: "YOUR_CLIENT_ID" });
+// const client = createThirdwebClient({ clientId: "YOUR_CLIENT_ID" });
 
-const wallets = [
-  inAppWallet(),
-  createWallet("io.metamask"),
-  createWallet("com.coinbase.wallet"),
-  createWallet("me.rainbow"),
-];
+// const wallets = [
+//   inAppWallet(),
+//   createWallet("io.metamask"),
+//   createWallet("com.coinbase.wallet"),
+//   createWallet("me.rainbow"),
+// ];
 
 // Define types for transactions, tokens, and NFTs
 interface Transaction {
@@ -100,9 +100,9 @@ export default function Test() {
   return (
     <ThirdwebProvider>
       <div className="items-center justify-items-center min-h-screen ">
-        <div className="absolute top-0 right-0 m-7">
+        {/* <div className="absolute top-0 right-0 m-7">
           <ConnectButton client={client} wallets={wallets} />
-        </div>
+        </div> */}
         <div className="mt-40 p-10 z-10">
           <h1 className="text-xl font-bold mb-4 text-white">
             Fetch Ethereum Data

@@ -3,6 +3,7 @@
 import React, { useState, useRef } from "react";
 import { useRouter } from "next/navigation"; // Import router for navigation
 import { useAddress } from "@thirdweb-dev/react";
+import Test from "../landingTest/test";
 
 const LandingPage: React.FC = () => {
   const [query, setQuery] = useState("");
@@ -92,7 +93,8 @@ const LandingPage: React.FC = () => {
             </button>
           </div>
         </form>
-
+        <div className="mt-22"></div>
+        <Test/>
         {/* Scroll Down Button */}
         <div className="mt-8">
           <button
