@@ -14,11 +14,16 @@ const LandingPage: React.FC = () => {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (query.trim()) {
-      // Navigate to the Search(without Login) page with the entered address
+      // Navigate to the SearchXL page with the entered address
       router.push(`/SearchXL?address=${encodeURIComponent(query)}`);
     } else {
       alert("Please enter an address to search!");
     }
+  };
+
+  const handleMint = () => {
+    // Navigate to the Search_Login page
+    router.push(`/Mint`);
   };
 
   const scrollToCustomLayout = () => {
@@ -73,7 +78,7 @@ const LandingPage: React.FC = () => {
             {address && (
               <button
                 type="button"
-                onClick={() => console.log("Mint clicked")}
+                onClick={handleMint} // Navigate to Search_Login
                 className="text-lg font-semibold uppercase tracking-wider text-white hover:text-green-300 focus:outline-none transition-all"
               >
                 Mint
@@ -98,6 +103,8 @@ const LandingPage: React.FC = () => {
           </button>
         </div>
       </div>
+ 
+
  
 
 
