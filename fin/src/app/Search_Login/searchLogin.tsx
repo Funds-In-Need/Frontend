@@ -63,24 +63,7 @@ const Search_Login: React.FC = () => {
   return (
     <div className="p-16">
       {/* Search Bar */}
-      <div className="flex items-center justify-center mb-16">
-        <form
-          onSubmit={handleSearch}
-          className="flex flex-col items-center space-y-6 w-full max-w-lg"
-        >
-          <div className="relative w-full">
-            {/* Input with smooth glowing animation */}
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Type your search..."
-              className="w-full px-6 py-4 text-lg text-gray-900 bg-white rounded-full shadow-md border-2 border-black focus:outline-none focus:ring-0 placeholder-gray-400 animate-smooth-glow"
-            />
-          </div>
-        </form>
-      </div>
-
+      
       {/* Loading Steps with Progress Bar and Step Counter */}
       <div className="flex flex-col items-center justify-center mt-32 mb-16">
         {isLoading && currentStep < steps.length ? (

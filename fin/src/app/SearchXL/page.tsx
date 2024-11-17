@@ -57,12 +57,16 @@ const AssessmentCard = () => {
     router.push("/landingPage"); // Navigate back to the landing page
   };
 
+  const generateRandomValue = (min: number, max: number): number => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+
   const metrics = [
-    { label: "Transaction history", value: 85 },
-    { label: "Loan repayment behavior", value: 45 },
-    { label: "Collateral management", value: 20 },
-    { label: "Liquidity provision", value: 75 },
-    { label: "Governance participation", value: 15 },
+    { label: "Transaction history", value: generateRandomValue(10, 100) },
+    { label: "Loan repayment behavior", value: generateRandomValue(10, 100) },
+    { label: "Collateral management", value: generateRandomValue(10, 100) },
+    { label: "Liquidity provision", value: generateRandomValue(10, 100) },
+    { label: "Governance participation", value: generateRandomValue(10, 100) },
   ];
 
   const calculateGradient = (value: number) => {

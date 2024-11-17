@@ -7,7 +7,7 @@ import Search_Login from "./Search_Login/searchLogin";
 export default function Page() {
   return (
     <>
-      <Search_Login/>
+      <LandingPage/>
     </>
   );
 }
