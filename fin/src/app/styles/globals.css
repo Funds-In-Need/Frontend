@@ -29,6 +29,27 @@
   }
 }
 
+@keyframes progress {
+  0% {
+    width: 0;
+    background: red;
+  }
+  50% {
+    background: orange;
+  }
+  100% {
+    background: green;
+  }
+
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--width);
+  }
+} 
+
+
 .animate-gradient-bg {
   background: linear-gradient(
     120deg,
@@ -48,6 +69,9 @@
   height: 100%;
   filter: blur(6px);
   transform: scale(1.1);
+
+  animation-name: progress;
+  animation-fill-mode: forwards;
 }
 
 

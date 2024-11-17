@@ -1,18 +1,24 @@
-// src/app/landingPage/page.tsx
 "use client";
 
 import React, { useState, useRef } from "react";
+import { useRouter } from "next/navigation"; // Import router for navigation
 import { useAddress } from "@thirdweb-dev/react";
 
 const LandingPage: React.FC = () => {
   const [query, setQuery] = useState("");
   const customLayoutRef = useRef<HTMLDivElement>(null);
+  const router = useRouter(); // Initialize router for navigation
 
   const address = useAddress(); // Fetch the connected wallet address
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Search query:", query);
+    if (query.trim()) {
+      // Navigate to the Search(without Login) page with the entered address
+      router.push(`/SearchXL?address=${encodeURIComponent(query)}`);
+    } else {
+      alert("Please enter an address to search!");
+    }
   };
 
   const scrollToCustomLayout = () => {
@@ -49,7 +55,7 @@ const LandingPage: React.FC = () => {
 
         {/* Search Bar */}
         <form
-          onSubmit={handleSearch}
+          onSubmit={handleSearch} // Attach navigation logic to form submission
           className="flex flex-col items-center space-y-6 w-full max-w-lg"
         >
           <div className="relative w-full">
